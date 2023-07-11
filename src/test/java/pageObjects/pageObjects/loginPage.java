@@ -58,6 +58,5 @@ public class loginPage extends PageObject {
         drop.click();
         Thread.sleep(3000);
         System.out.println(drop.getText());
-        System.out.println(drop.getTagName());
     }
 }
