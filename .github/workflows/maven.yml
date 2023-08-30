@@ -24,4 +24,4 @@ jobs:
     - name: variable
       run: echo ${{ github.event.inputs.test_plan_key }}
     - name: Build with Maven
-      run: mvn clean verify -Dtags="@TEST_"+${{ github.event.inputs.test_plan_key }} && mvn compile test xray:import-results
+      run: mvn clean verify -Dtags="@TEST_${{ github.event.inputs.test_plan_key }}" && mvn compile test xray:import-results
