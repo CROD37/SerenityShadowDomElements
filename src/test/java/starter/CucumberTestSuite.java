@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        plugin = {"json:target/cucumber-report.json", "rerun:target/rerun.txt"},
+        plugin = {"json:target/cucumber.json", "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "stepdefinitions",
         tags = "@Test4",

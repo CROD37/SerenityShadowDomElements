@@ -144,7 +144,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-07-2023 22:30</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 23-08-2023 21:17</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -184,9 +184,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
                             <span class="test-case-title">
-                                <span class="success-color">
+                                <span class="error-color">
                                     Cargar archivos
                                         <span class="related-issue-title"></span>
                                 </span>
@@ -219,7 +219,6 @@
                     Steps
                 </th>
 
-                    <th width="150" class="greentext">Screenshots</th>
                 <th width="130" class="greentext">Outcome</th>
                 <th width="100" class="greentext"><i title="Duration" class="bi bi-stopwatch"></i></th>
             </tr>
@@ -227,12 +226,12 @@
                 <td colspan="5"></td>
             </tr>
 
-                <tr class="test-SUCCESS">
+                <tr class="test-ERROR">
 
                     <td width="50" class="step-icon">
                         <a name="0"></a>
                             <span style="margin-left: 20px;"
-                                  class="top-level-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                  class="top-level-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a>
                                 </span>
                     </td>
 
@@ -246,24 +245,53 @@
                         </div>
                     </td>
 
-                        <td width="160" class="SUCCESS-text">
-
-                                <a href="04a6ce77baa31e6b4f6525f9be09d40d51e97685239d15e19b3b41d32e6a4382_screenshots.html#screenshots?screenshot=0">
-                                    <img src="61e2d8d26a9f46fe9fc14a3d10c9645de9c6d413c03613952f7a353ed9416402.png"
-                                         href="61e2d8d26a9f46fe9fc14a3d10c9645de9c6d413c03613952f7a353ed9416402.png"
-                                         class="screenshot"
-                                         width="48" height="48"/>
-                                </a>
-                        </td>
-                    <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                    <td width="100"><span class="top-level-step">44s 930ms</span></td>
+                    <td width="130"><span class="top-level-step">ERROR</span></td>
+                    <td width="100"><span class="top-level-step">4s 616ms</span></td>
                 </tr>
-                <tr class="test-SUCCESS">
+                    <tr class="test-ERROR">
+                        <td width="40">&nbsp</td>
+                        <td width="%" colspan="3" class="error-message-cell">
+
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">net.thucydides.core.webdriver.DriverConfigurationError: Could not instantiate class io.appium.java_client.AppiumDriver</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-1"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-1">
+            <div class="card">
+                <div class="card-header">
+                    <h4>net.thucydides.core.webdriver.DriverConfigurationError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)<br />io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)<br />io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)<br />io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)<br />io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)<br />io.cucumber.core.runner.TestStep.run(TestStep.java:56)<br />io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)<br />io.cucumber.core.runner.TestCase.run(TestCase.java:84)<br />io.cucumber.core.runner.Runner.runPickle(Runner.java:75)<br />io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)<br />io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)<br />io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)<br />io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)<br />io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:259)<br />io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:59)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                        </td>
+                    </tr>
+                <tr class="test-SKIPPED">
 
                     <td width="50" class="step-icon">
                         <a name="1"></a>
                             <span style="margin-left: 20px;"
-                                  class="top-level-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                  class="top-level-icon"><a href='##beforetable'><i class='bi bi-skip-forward skipped-icon ' title='SKIPPED'></i></a>
                                 </span>
                     </td>
 
@@ -277,22 +305,13 @@
                         </div>
                     </td>
 
-                        <td width="160" class="SUCCESS-text">
-
-                                <a href="04a6ce77baa31e6b4f6525f9be09d40d51e97685239d15e19b3b41d32e6a4382_screenshots.html#screenshots?screenshot=1">
-                                    <img src="a7223f8eed1c07980b2f39cb9e6ccf9e647b1684c9ca389acec4b4bbbddbe637.png"
-                                         href="a7223f8eed1c07980b2f39cb9e6ccf9e647b1684c9ca389acec4b4bbbddbe637.png"
-                                         class="screenshot"
-                                         width="48" height="48"/>
-                                </a>
-                        </td>
-                    <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                    <td width="100"><span class="top-level-step">11s 251ms</span></td>
+                    <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                    <td width="100"><span class="top-level-step">003ms</span></td>
                 </tr>
-            <tr class="test-SUCCESS">
-                    <td colspan="3"></td>
-                <td width="130"><span class="top-level-step"><em>SUCCESS</em></span></td>
-                <td width="100"><span class="top-level-step"><em>56.3s</em></span></td>
+            <tr class="test-ERROR">
+                    <td colspan="2"></td>
+                <td width="130"><span class="top-level-step"><em>ERROR</em></span></td>
+                <td width="100"><span class="top-level-step"><em>4.75s</em></span></td>
             </tr>
 
         </table>

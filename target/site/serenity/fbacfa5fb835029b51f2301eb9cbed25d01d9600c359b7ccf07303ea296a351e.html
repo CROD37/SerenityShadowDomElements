@@ -22,15 +22,16 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
 <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
 <link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
 
 <!-- Required Javascript -->
 <script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
-<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
-<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
-<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -70,9 +71,9 @@
 <!-- JQuery-UI -->
 <link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
 <script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
-<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
-<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
-<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -106,14 +107,23 @@
 
         $(document).ready(function () {
 
-            var scenarioTable = $('.scenario-result-table').DataTable({
-
-                "order": [],
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
                 "language": {
                     searchPlaceholder: "Filter",
                     search: ""
-                }
-            });
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            })
 
             $('.example-table table').DataTable({
                 searching: false,
@@ -144,7 +154,7 @@
             $("#requirements-tabs").tabs();
             $("#test-tabs").tabs();
 
-            var requirementsTree = [{"text":"Cargar archivos","type":"feature","href":"fbacfa5fb835029b51f2301eb9cbed25d01d9600c359b7ccf07303ea296a351e.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e1 scenario\u003c/span\u003e"]}];
+            var requirementsTree = [{"text":"Cargar archivos","type":"feature","href":"fbacfa5fb835029b51f2301eb9cbed25d01d9600c359b7ccf07303ea296a351e.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-exclamation-triangle-fill error-icon \u0027 title\u003d\u0027ERROR\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e3 scenarios\u003c/span\u003e"]}];
 
             $('#tree').treeview({
                 data: requirementsTree,
@@ -215,7 +225,7 @@
             <a href="#"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 11-03-2023 22:35</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-07-2023 19:23</span>
     <br style="clear:left"/>
 </div>
 
@@ -347,75 +357,83 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                    <h3>Scenarios</h3>
+                                                <h3>Scenarios</h3>
 
-                                                        <a name="1657d54e-1313-4643-8abc-79a0ddf38879"></a>
-                                                        <p class="rule-tags inline-tag">
-                                                        </p>
+                                                    <a name="92b7242f-0d29-44a6-8839-55057989f9bd"></a>
+                                                    <p class="rule-tags inline-tag">
+                                                    </p>
 
 
-                                                            <div class="scenario-docs card" id="14c8c25445173c9786bde4575361e3864ac5b42c15282ffdf69e42618b36e7fb">
-                                                                <div class="scenario-docs card-header error" style="min-height:1.5em;">
-                                                                    <div>
+                                                        <div class="scenario-docs card" id="14c8c25445173c9786bde4575361e3864ac5b42c15282ffdf69e42618b36e7fb">
+                                                            <div class="scenario-docs card-header error"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
                                                                         <span class="scenario-heading">
                                                                             <a href="5efafdc8a6e54fc83f9f26cb63ac67aa65140cd7f8e6d86a7fa5b19bcccd845e.html"
                                                                                title="View test results">Scenario: Cargar archivos</a>
                                                                         </span>
 
                                                                         <span class="example-tags inline-tag">
-                                                                                <span class="badge tag-badge" style="background:default;">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
                                                                                     <i class="bi bi-tag-fill"></i>&nbsp;
-                                                                                    <a class="tagLink" style="background:default;" href="af35929f19c009f18e0a71232e12fedd0ed223ed191b37124c0e6a83ee4e3968.html">Test4 (tag)</a>
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="af35929f19c009f18e0a71232e12fedd0ed223ed191b37124c0e6a83ee4e3968.html">Test4 (tag)</a>
                                                                                 </span>
                                                                         </span>
 
-                                                                        <span class="scenario-result-icon">
+                                                                    <span class="scenario-result-icon">
                                                                     
 
-                                                                                <a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a>
+                                                                            <a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a>
                                                                         </span>
-                                                                    </div>
-
                                                                 </div>
-                                                                <div class="scenario-docs card-body">
-                                                                        <p>Given Mario se encuentra en el portal de the internet</p>
-                                                                        <p>When Cargue su archivo</p>
-                                                                    <div class="examples">
-                                                                    </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given Mario se encuentra en el portal de the internet</p>
+                                                                    <p>When Cargue su archivo</p>
+                                                                <div class="examples">
                                                                 </div>
                                                             </div>
+                                                        </div>
 
-                                                            <div class="scenario-docs card" id="06ada23e5bc8c5457aa08121d6f86b9482649c651502696e2c02ab492980f900">
-                                                                <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
-                                                                    <div>
+                                                        <div class="scenario-docs card" id="06ada23e5bc8c5457aa08121d6f86b9482649c651502696e2c02ab492980f900">
+                                                            <div class="scenario-docs card-header undefined"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
                                                                         <span class="scenario-heading">
                                                                             <a href=""
                                                                                title="View test results">Scenario: Ingresar al portal con un usuario valido6</a>
                                                                         </span>
 
                                                                         <span class="example-tags inline-tag">
-                                                                                <span class="badge tag-badge" style="background:default;">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
                                                                                     <i class="bi bi-tag-fill"></i>&nbsp;
-                                                                                    <a class="tagLink" style="background:default;" href="09268b9fb0ee4bdf48b5724b2dd1987d09f653901915d3ba4d092ddaafaa2569.html">Test3 (tag)</a>
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="09268b9fb0ee4bdf48b5724b2dd1987d09f653901915d3ba4d092ddaafaa2569.html">Test3 (tag)</a>
                                                                                 </span>
                                                                         </span>
 
-                                                                        <span class="scenario-result-icon">
+                                                                    <span class="scenario-result-icon">
                                                                     
 
-                                                                                <i class='bi bi-pause-circle undefined-icon ' title='No test has been implemented yet'></i>
+                                                                            <i class='bi bi-pause-circle undefined-icon ' title='No test has been implemented yet'></i>
                                                                         </span>
-                                                                    </div>
-
                                                                 </div>
-                                                                <div class="scenario-docs card-body">
-                                                                        <p>Given Mario se encuentra en el portal de Orange HRM</p>
-                                                                        <p>When ingresa el usuario &quot;Admin&quot; y la contraseña &quot;admin123&quot;</p>
-                                                                        <p>When Seleccione la opcion de configuracion</p>
-                                                                    <div class="examples">
-                                                                    </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given Mario se encuentra en el portal de Orange HRM</p>
+                                                                    <p>When ingresa el usuario &quot;Admin&quot; y la contraseña &quot;admin123&quot;</p>
+                                                                    <p>When Seleccione la opcion de configuracion</p>
+                                                                <div class="examples">
                                                                 </div>
                                                             </div>
+                                                        </div>
                                             </div>
                                         </div>
                                     </div>
@@ -452,44 +470,116 @@
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-sm-12">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>1</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>46d  1h  53m 44s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>3</td>
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>2s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-person"></i> Number of Manual Test Cases
+                    </td>
+                    <td>0</td>
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>16s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Jul 08, 2023 19:23:24</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>8s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Aug 23, 2023 21:17:08</td>
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>24s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
                                                 <h3><i class="bi bi-gear"></i> Automated Tests</h3>
 
-                                                    <table class="scenario-result-table table"
-                                                           id="scenario-results">
+                                                    <table class="scenario-result-table table" id="scenario-results">
                                                         <thead>
                                                         <tr>
+                                                            <th>feature</th>
                                                             <th class="test-name-column">Scenario</th>
+                                                            <th>Context</th>
                                                             <th>Steps</th>
                                                             <th>Started</th>
-                                                            <th>Duration</th>
+                                                            <th>Total Duration</th>
                                                             <th>Result</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr class="scenario-result ERROR">
-                                                                <td>
+                                                                <tr class="scenario-result ERROR">
+                                                                    <td>
+                                                                            <a href="fbacfa5fb835029b51f2301eb9cbed25d01d9600c359b7ccf07303ea296a351e.html">Cargar archivos</a>
+                                                                    </td>
+                                                                    <td>
                                                                         <a href="5efafdc8a6e54fc83f9f26cb63ac67aa65140cd7f8e6d86a7fa5b19bcccd845e.html">Cargar archivos</a>
-                                                                </td>
-                                                                <td>2</td>
-                                                                <td>22:35:23</td>
-                                                                <td>9s 882ms</td>
-                                                                <td>
-                                                                        <a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
-                                                                            style="display:none">ERROR</span>
-                                                                                                                                    </td>
-                                                            </tr>
-                                                            <tr class="scenario-result UNDEFINED">
-                                                                <td>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-browser-chrome' title='Chrome'></i> <i class='bi bi-windows' title='Windows'></i></span><span style="display:none">Chrome,Windows</span> </td>
+                                                                    <td>2</td>
+                                                                    <td>19:23:24</td>
+                                                                    <td>24s 135ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
+                                                                                style="display:none">ERROR</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result UNDEFINED">
+                                                                    <td>
+                                                                            <a href="fbacfa5fb835029b51f2301eb9cbed25d01d9600c359b7ccf07303ea296a351e.html">Cargar archivos</a>
+                                                                    </td>
+                                                                    <td>
                                                                         <a href="">Ingresar al portal con un usuario valido6</a>
-                                                                </td>
-                                                                <td>3</td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td>
-                                                                        <i class='bi bi-pause-circle undefined-icon ' title='No test has been implemented yet'></i> <span
-                                                                            style="display:none">UNDEFINED</span>
-                                                                                                                                    </td>
-                                                            </tr>
+                                                                    </td>
+                                                                    <td><span class='context-icon'><i class='bi bi-browser-chrome' title='Chrome'></i> <i class='bi bi-windows' title='Windows'></i></span><span style="display:none">Chrome,Windows</span> </td>
+                                                                    <td>3</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td><i class='bi bi-pause-circle undefined-icon ' title='No test has been implemented yet'></i> <span
+                                                                                style="display:none">UNDEFINED</span>
+                                                                    </td>
+                                                                </tr>
                                                         </tbody>
                                                     </table>
 
@@ -513,7 +603,7 @@
                             <div>
                                     <a href="af35929f19c009f18e0a71232e12fedd0ed223ed191b37124c0e6a83ee4e3968.html">
                                     <span class="tag-badge badge" style="background-color:#fe6c2d; margin:1em;padding:4px;">
-                                        <i class="bi bi-tag-fill"></i> Test4&nbsp;&nbsp;&nbsp;1
+                                        <i class="bi bi-tag-fill"></i> Test4&nbsp;&nbsp;&nbsp;3
                                     </span>
                                     </a>
                             </div>
@@ -532,7 +622,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <span class="version">Serenity BDD version 3.3.0</span>
+                    <span class="version">Serenity BDD version 3.6.12</span>
                 </div>
             </div>
         </div>
@@ -547,21 +637,21 @@
 
         // Options define for display value on top of bars
         const outcomeDetailsReports = [
-            { title: 'Passing Scenarios', link: "43358d3a69328258cfcadecc1d1bed4b296abeb674d6bbc07d2372afcad81c1f.html" },
-            { title: 'Pending Scenarios', link: "8f4b7fb38104aac1fb71ea8bd9f2f35a18a9d667f8490109fc4db79640bb99b7.html" },
-            { title: 'Ignored Scenarios', link: "070be0db58fbbb4cc7517326c4ced9d5c01e82261410f9374194c3e4c0e17b49.html" },
-            { title: 'Skipped Scenarios', link: "5c712b237a5a63e8c05c9c8a9da0c19ac47124fbfa581a7c62530de9727b9e7b.html" },
-            { title: 'Aborted Scenarios',  link: "3c977bf2ec525265574b84e8bc24ccdbc7adf07d8fec6391a05fb8ea27c73e70.html"},
-            { title: 'Failed Scenarios', link: "7eb65423b236bebb850a37755444cd35585f897aa8e209b2c681ac5775679c4e.html"  },
-            { title: 'Broken Scenarios', link: "6a6a89b4abe4c2d32b8c1a055e4ccb8ecc7f64b795142fb40f239f24cb9fe838.html"    },
-            { title: 'Compromised Scenarios',  link: "72e8cdbaf897d29992395b313fa3aaca68970a7a5adc133bcfa6464f277a1a90.html" },
+            { title: 'Passing Test Cases', link: "43358d3a69328258cfcadecc1d1bed4b296abeb674d6bbc07d2372afcad81c1f.html" },
+            { title: 'Pending Test Cases', link: "8f4b7fb38104aac1fb71ea8bd9f2f35a18a9d667f8490109fc4db79640bb99b7.html" },
+            { title: 'Ignored Test Cases', link: "070be0db58fbbb4cc7517326c4ced9d5c01e82261410f9374194c3e4c0e17b49.html" },
+            { title: 'Skipped Test Cases', link: "5c712b237a5a63e8c05c9c8a9da0c19ac47124fbfa581a7c62530de9727b9e7b.html" },
+            { title: 'Aborted Test Cases',  link: "3c977bf2ec525265574b84e8bc24ccdbc7adf07d8fec6391a05fb8ea27c73e70.html"},
+            { title: 'Failed Test Cases', link: "7eb65423b236bebb850a37755444cd35585f897aa8e209b2c681ac5775679c4e.html"  },
+            { title: 'Broken Test Cases', link: "6a6a89b4abe4c2d32b8c1a055e4ccb8ecc7f64b795142fb40f239f24cb9fe838.html"    },
+            { title: 'Compromised Test Cases',  link: "72e8cdbaf897d29992395b313fa3aaca68970a7a5adc133bcfa6464f277a1a90.html" },
         ]
         const outcomeData = {
-            labels: ['Passing Scenarios', 'Pending Scenarios', 'Ignored Scenarios', 'Skipped Scenarios', 'Aborted Scenarios', 'Failed Scenarios', 'Broken Scenarios', 'Compromised Scenarios','Undefined Scenarios'],
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
             datasets: [{
                 label: 'Test Results',
                 fill: false,
-                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 1}, {meta: 'Compromised tests', value: 0}],
+                data: [{meta: 'Passing tests', value: 1}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 2}, {meta: 'Compromised tests', value: 0}],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -612,7 +702,7 @@
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = " "
+                        var text = "33%"
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -641,22 +731,22 @@
 
         // Options define for display value on top of bars
         const requirementsOutcomeDetailsReports = [
-            { title: 'Passing Scenarios', link: "43358d3a69328258cfcadecc1d1bed4b296abeb674d6bbc07d2372afcad81c1f.html" },
-            { title: 'Pending Scenarios', link: "8f4b7fb38104aac1fb71ea8bd9f2f35a18a9d667f8490109fc4db79640bb99b7.html" },
-            { title: 'Ignored Scenarios', link: "070be0db58fbbb4cc7517326c4ced9d5c01e82261410f9374194c3e4c0e17b49.html" },
-            { title: 'Skipped Scenarios', link: "5c712b237a5a63e8c05c9c8a9da0c19ac47124fbfa581a7c62530de9727b9e7b.html" },
-            { title: 'Aborted Scenarios',  link: "3c977bf2ec525265574b84e8bc24ccdbc7adf07d8fec6391a05fb8ea27c73e70.html"},
-            { title: 'Failed Scenarios', link: "7eb65423b236bebb850a37755444cd35585f897aa8e209b2c681ac5775679c4e.html"  },
-            { title: 'Broken Scenarios', link: "6a6a89b4abe4c2d32b8c1a055e4ccb8ecc7f64b795142fb40f239f24cb9fe838.html"    },
-            { title: 'Compromised Scenarios',  link: "72e8cdbaf897d29992395b313fa3aaca68970a7a5adc133bcfa6464f277a1a90.html" },
-            { title: 'Undefined Scenarios',  link: "" },
+            { title: 'Passing Test Cases', link: "43358d3a69328258cfcadecc1d1bed4b296abeb674d6bbc07d2372afcad81c1f.html" },
+            { title: 'Pending Test Cases', link: "8f4b7fb38104aac1fb71ea8bd9f2f35a18a9d667f8490109fc4db79640bb99b7.html" },
+            { title: 'Ignored Test Cases', link: "070be0db58fbbb4cc7517326c4ced9d5c01e82261410f9374194c3e4c0e17b49.html" },
+            { title: 'Skipped Test Cases', link: "5c712b237a5a63e8c05c9c8a9da0c19ac47124fbfa581a7c62530de9727b9e7b.html" },
+            { title: 'Aborted Test Cases',  link: "3c977bf2ec525265574b84e8bc24ccdbc7adf07d8fec6391a05fb8ea27c73e70.html"},
+            { title: 'Failed Test Cases', link: "7eb65423b236bebb850a37755444cd35585f897aa8e209b2c681ac5775679c4e.html"  },
+            { title: 'Broken Test Cases', link: "6a6a89b4abe4c2d32b8c1a055e4ccb8ecc7f64b795142fb40f239f24cb9fe838.html"    },
+            { title: 'Compromised Test Cases',  link: "72e8cdbaf897d29992395b313fa3aaca68970a7a5adc133bcfa6464f277a1a90.html" },
+            { title: 'Undefined Test Cases',  link: "" },
         ]
         const requirementsOutcomeData = {
-            labels: ['Passing Scenarios', 'Pending Scenarios', 'Ignored Scenarios', 'Skipped Scenarios', 'Aborted Scenarios', 'Failed Scenarios', 'Broken Scenarios', 'Compromised Scenarios','Undefined Scenarios'],
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
             datasets: [{
                 label: 'Feature Coverage',
                 fill: false,
-                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 1}, {meta: 'Compromised tests', value: 0}],
+                data: [{meta: 'Passing tests', value: 1}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 2}, {meta: 'Compromised tests', value: 0}],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -707,7 +797,7 @@
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = " "
+                        var text = "33%"
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -752,7 +842,7 @@
             datasets: [
                 {
                     label: 'Automated',
-                    data: [0,0,0,0,0,0,1,0],
+                    data: [1,0,0,0,0,0,2,0],
                     backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                     borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                     borderWidth: 1
@@ -835,7 +925,7 @@
             datasets: [{
                 label: 'Number of tests per duration',
                 fill: false,
-                data: ['0','1','0','0','0','0','0','0'],
+                data: ['0','2','1','0','0','0','0','0'],
                 backgroundColor: 'rgba(83, 146, 255,0.5)',
                 borderColor: 'rgba(83, 146, 255, 1)',
             }]

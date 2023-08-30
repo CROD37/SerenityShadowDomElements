@@ -25,15 +25,16 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
 <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
 <link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
 
 <!-- Required Javascript -->
 <script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
-<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
-<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
-<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -73,9 +74,9 @@
 <!-- JQuery-UI -->
 <link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
 <script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
-<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
-<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
-<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -107,9 +108,8 @@
 
     <script class="code" type="text/javascript">$(document).ready(function () {
 
-            $('.scenario-result-table').DataTable({
-                "order": [[0, "asc",], [3, "asc",]],
-                "pageLength": 10,
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",], [2, "asc",]],
                 "language": {
                     searchPlaceholder: "Filter",
                     search: ""
@@ -117,16 +117,15 @@
                 columnDefs: [
                     {type: 'time-elapsed-dhms', targets: 4}
                 ]
-            });
-
-            $('.manual-scenario-result-table').DataTable({
-                "order": [[0, "asc",], [3, "asc",]],
-                "pageLength": 10,
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
                 "language": {
                     searchPlaceholder: "Filter",
                     search: ""
                 },
-            });
+            })
+
             // Results table
             $('#test-results-table').DataTable({
                 "order": [[0, "asc",], [3, "asc",]],
@@ -141,12 +140,13 @@
             });
 
             $(".feature-coverage-table").DataTable({
-                searching: false,
+                searching: true,
                 paging: false,
                 info: false
             });
 
             $(".feature-coverage-table-with-pagination").DataTable({
+                searching: true,
                 order: [[0, "asc",]],
                 pageLength: 10,
                 language: {
@@ -200,7 +200,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 11-03-2023 22:36:55</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 23-08-2023 21:17:12</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -215,10 +215,10 @@
                         <td width="375px" valign="top">
                             <div class="test-count-summary">
                                 <div class="test-count-title">
-                                    3 scenarios 
+                                    3 tests
+
                                      |
-                                        <a href="24aacda3e479b17aef4c2fafa3fb6f2fcac1704edab883a1848f7adc3af41546.csv" title="Download CSV"> <i class="bi bi-cloud-arrow-down"
-                                                                                        title="Download CSV"></i></a>
+                                        <a href="24aacda3e479b17aef4c2fafa3fb6f2fcac1704edab883a1848f7adc3af41546.csv" title="Download CSV"> <i class="bi bi-cloud-arrow-down" title="Download CSV"></i></a>
 
 
                                 </div>
@@ -277,75 +277,74 @@
                                                             </div>
                                                         </div>
                                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                                        <div>
-                                                            <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
-                                                            <div>
-                                                                <table class="table table-striped table-hover">
-                                                                    <tbody>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-card-checklist"></i> Number of Scenarios
-                                                                        </td>
-                                                                        <td>3</td>
-                                                                    </tr>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-caret-right"></i> Number of Test Cases
-                                                                        </td>
-                                                                        <td>3</td>
-                                                                    </tr>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-flag-fill"></i> Tests
-                                                                            Started
-                                                                        </td>
-                                                                        <td>Mar 11, 2023 22:29:47</td>
-                                                                    </tr>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-stop-circle"></i> Tests
-                                                                            Finished
-                                                                        </td>
-                                                                        <td>Mar 11, 2023 22:30:36</td>
-                                                                    </tr>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-stopwatch"></i> Total
-                                                                            Duration
-                                                                        </td>
-                                                                        <td>49s</td>
-                                                                    </tr>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-trophy"></i> Fastest Test
-                                                                        </td>
-                                                                        <td>9s</td>
-                                                                    </tr>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-skip-start"></i> Slowest
-                                                                            Test
-                                                                        </td>
-                                                                        <td>28s</td>
-                                                                    </tr>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-stopwatch"></i> Average
-                                                                            Execution Time
-                                                                        </td>
-                                                                        <td>16s</td>
-                                                                    </tr>
-                                                                    <tr scope="row">
-                                                                        <td>
-                                                                            <i class="bi bi-stopwatch-fill"></i> Total
-                                                                            Execution Time
-                                                                        </td>
-                                                                        <td>49s</td>
-                                                                    </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>3</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>3</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Mar 11, 2023 22:29:47</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Mar 11, 2023 22:30:36</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>49s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>9s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>28s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>16s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>49s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -444,60 +443,122 @@
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-sm-12">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>3</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>49s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>3</td>
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>9s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-person"></i> Number of Manual Test Cases
+                    </td>
+                    <td>0</td>
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>28s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Mar 11, 2023 22:29:47</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>16s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Mar 11, 2023 22:30:36</td>
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>49s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
                                                         <h3><i class="bi bi-gear"></i> Automated Tests</h3>
 
-                                                            <table class="automated-scenario-result-table table"
-                                                                   id="scenario-results">
+                                                            <table class="scenario-result-table table" id="scenario-results">
                                                                 <thead>
                                                                 <tr>
                                                                     <th>feature</th>
                                                                     <th class="test-name-column">Scenario</th>
+                                                                    <th>Context</th>
                                                                     <th>Steps</th>
                                                                     <th>Started</th>
-                                                                    <th>Duration</th>
+                                                                    <th>Total Duration</th>
                                                                     <th>Result</th>
                                                                 </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr class="scenario-result SUCCESS">
-                                                                        <td>
-                                                                                <a href="88c8e60c4f9823919e8c7ca68301a2cb4877c4db44e93095a9b76ce89ef3a4f3.html">Ingresar al portal de Orange HRM</a>
-                                                                        </td>
-                                                                        <td>
-                                                                            <a href="c8fd70a68b484432b9770a1e358b1acb29e8ddb7562ce7d8c45464a850f8f0f6.html">Ingresar al portal con un usuario valido</a>
-                                                                        </td>
-                                                                        <td>6</td>
-                                                                        <td>22:29:47</td>
-                                                                        <td>28s 445ms</td>
-                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr class="scenario-result SUCCESS">
-                                                                        <td>
-                                                                                <a href="c27008bb29f0fab9ab6c0adf4b1f761e33a6fbf281f5be76ef724e81dc898df2.html">Ingresar al portal de Orange HRM 2</a>
-                                                                        </td>
-                                                                        <td>
-                                                                            <a href="4e1cc3c4383438572e587e0f2c6a17a4ac7d4c4576e7a57b2cafc06434d1520e.html">Ingresar al portal con un usuario valido</a>
-                                                                        </td>
-                                                                        <td>3</td>
-                                                                        <td>22:30:15</td>
-                                                                        <td>10s 964ms</td>
-                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr class="scenario-result SUCCESS">
-                                                                        <td>
-                                                                                <a href="c27008bb29f0fab9ab6c0adf4b1f761e33a6fbf281f5be76ef724e81dc898df2.html">Ingresar al portal de Orange HRM 2</a>
-                                                                        </td>
-                                                                        <td>
-                                                                            <a href="c8194ab68468c7f875e5b2af91c9f49cae67d9b03ecca26c4df097b1c7c337cd.html">Ingresar al portal con un usuario valido2</a>
-                                                                        </td>
-                                                                        <td>3</td>
-                                                                        <td>22:30:27</td>
-                                                                        <td>9s 880ms</td>
-                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
-                                                                        </td>
-                                                                    </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="88c8e60c4f9823919e8c7ca68301a2cb4877c4db44e93095a9b76ce89ef3a4f3.html">Ingresar al portal de Orange HRM</a>
+                                                                            </td>
+                                                                            <td><a href="c8fd70a68b484432b9770a1e358b1acb29e8ddb7562ce7d8c45464a850f8f0f6.html">Ingresar al portal con un usuario valido</a></td>
+                                                                            <td><span style="display:none"></span> </td>
+                                                                            <td>6</td>
+                                                                            <td>22:29:47</td>
+                                                                            <td>28s 445ms</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="c27008bb29f0fab9ab6c0adf4b1f761e33a6fbf281f5be76ef724e81dc898df2.html">Ingresar al portal de Orange HRM 2</a>
+                                                                            </td>
+                                                                            <td><a href="4e1cc3c4383438572e587e0f2c6a17a4ac7d4c4576e7a57b2cafc06434d1520e.html">Ingresar al portal con un usuario valido</a></td>
+                                                                            <td><span style="display:none"></span> </td>
+                                                                            <td>3</td>
+                                                                            <td>22:30:15</td>
+                                                                            <td>10s 964ms</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="c27008bb29f0fab9ab6c0adf4b1f761e33a6fbf281f5be76ef724e81dc898df2.html">Ingresar al portal de Orange HRM 2</a>
+                                                                            </td>
+                                                                            <td><a href="c8194ab68468c7f875e5b2af91c9f49cae67d9b03ecca26c4df097b1c7c337cd.html">Ingresar al portal con un usuario valido2</a></td>
+                                                                            <td><span style="display:none"></span> </td>
+                                                                            <td>3</td>
+                                                                            <td>22:30:27</td>
+                                                                            <td>9s 880ms</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
                                                                 </tbody>
                                                             </table>
 
@@ -530,7 +591,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <span class="version">Serenity BDD version 3.3.0</span>
+            <span class="version">Serenity BDD version 3.6.12</span>
         </div>
     </div>
 </div>
@@ -544,17 +605,17 @@
 
         // Options define for display value on top of bars
         const outcomeDetailsReports = [
-            { title: 'Passing Scenarios', link: "b8f0d79d437e274308842b7f98aedd6055feb7aad4686a7e731b66018ff56fbf.html" },
-            { title: 'Pending Scenarios', link: "7f230692dd7ed08feeef968d186f6b11bfa088acdbf05829237f0dc856e4304a.html" },
-            { title: 'Ignored Scenarios', link: "31bfb9ec25d8b3c32688e11ebbe82b3b010e10828116367fc47bc2c2782c83f2.html" },
-            { title: 'Skipped Scenarios', link: "3704d641ae8981f2678fb184380f735143a43ee5d1bd9b524c5f9c5e96f8ab9a.html" },
-            { title: 'Aborted Scenarios',  link: "913bda1464a5e4f9862f35591643a2845d05f11b14058df91a5b9d088bff81ba.html"},
-            { title: 'Failed Scenarios', link: "b55b15acc65d3e60fc3442d76dc0896dd45875aab0f3437900809ac23c230ede.html"  },
-            { title: 'Broken Scenarios', link: "5de76e4ee78fe95279abbf168b5de51d7156b95b1987c2fb8ab2665545b16a77.html"    },
-            { title: 'Compromised Scenarios',  link: "915ff8cc86e1dedd00e6a2954f8c79654f88025fb7239083f2729de1b182ad04.html" },
+            { title: 'Passing Test Cases', link: "b8f0d79d437e274308842b7f98aedd6055feb7aad4686a7e731b66018ff56fbf.html" },
+            { title: 'Pending Test Cases', link: "7f230692dd7ed08feeef968d186f6b11bfa088acdbf05829237f0dc856e4304a.html" },
+            { title: 'Ignored Test Cases', link: "31bfb9ec25d8b3c32688e11ebbe82b3b010e10828116367fc47bc2c2782c83f2.html" },
+            { title: 'Skipped Test Cases', link: "3704d641ae8981f2678fb184380f735143a43ee5d1bd9b524c5f9c5e96f8ab9a.html" },
+            { title: 'Aborted Test Cases',  link: "913bda1464a5e4f9862f35591643a2845d05f11b14058df91a5b9d088bff81ba.html"},
+            { title: 'Failed Test Cases', link: "b55b15acc65d3e60fc3442d76dc0896dd45875aab0f3437900809ac23c230ede.html"  },
+            { title: 'Broken Test Cases', link: "5de76e4ee78fe95279abbf168b5de51d7156b95b1987c2fb8ab2665545b16a77.html"    },
+            { title: 'Compromised Test Cases',  link: "915ff8cc86e1dedd00e6a2954f8c79654f88025fb7239083f2729de1b182ad04.html" },
         ]
         const outcomeData = {
-            labels: ['Passing Scenarios', 'Pending Scenarios', 'Ignored Scenarios', 'Skipped Scenarios', 'Aborted Scenarios', 'Failed Scenarios', 'Broken Scenarios', 'Compromised Scenarios','Undefined Scenarios'],
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
             datasets: [{
                 label: 'Test Results',
                 fill: false,

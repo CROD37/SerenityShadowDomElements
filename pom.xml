@@ -70,6 +70,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>3.6.12</serenity.version>
         <encoding>UTF-8</encoding>
+        <my.variable>${env.JAVA_HOME}</my.variable>
         <tags></tags>
         <parallel.tests>4</parallel.tests>
         <webdriver.base.url></webdriver.base.url>
@@ -159,6 +160,11 @@
             <version>3.23.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>app.getxray</groupId>
+            <artifactId>xray-maven-plugin</artifactId>
+            <version>0.7.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -221,6 +227,20 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>app.getxray</groupId>
+                <artifactId>xray-maven-plugin</artifactId>
+                <version>0.7.0</version>
+                <configuration>
+                    <clientId>DDF9106C6F0C4627959D552F6624F0D9</clientId>
+                    <clientSecret>35d85acd05af9ebf71bccf2d7d9e8f485e611cbbe799c9da29f0ca18a6c06e22</clientSecret>
+                    <cloud>true</cloud>
+                    <reportFormat>cucumber</reportFormat>
+                    <reportFile>target/cucumber.json</reportFile>
+                    <projectKey>PX</projectKey>
+                    <inputFeatures>src/test/resources/features/ingresarOrangeHRM3.feature</inputFeatures>
+                </configuration>
             </plugin>
         </plugins>
     </build>
