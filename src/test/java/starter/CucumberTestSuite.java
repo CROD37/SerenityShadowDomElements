@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber.json", "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@Test4",
+        tags = "@TEST_PX-5",
         monochrome = true
 )
 public class CucumberTestSuite {
