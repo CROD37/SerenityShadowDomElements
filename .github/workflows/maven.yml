@@ -25,3 +25,10 @@ jobs:
       run: echo ${{ github.event.inputs.test_plan_key }}
     - name: Build with Maven
       run: mvn clean verify -Dtags="@TEST_${{ github.event.inputs.test_plan_key }}" && mvn compile test xray:import-results
+
+    - name: Deploy report to Github Pages
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
