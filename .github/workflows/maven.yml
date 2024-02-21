@@ -36,6 +36,6 @@ jobs:
     - name: Publicar informe en GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GH_TOKEN }}
         publish_dir: ./target/site/serenity # Ajusta la ruta según la estructura de tu proyecto
         enable_jekyll: false # Si no usas Jekyll en tu informe, establece esto en false
