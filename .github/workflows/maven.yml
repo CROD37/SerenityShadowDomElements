@@ -26,8 +26,18 @@ jobs:
     - name: Build with Maven
       run: mvn clean verify -Dtags="@TEST_${{ github.event.inputs.test_plan_key }}" && mvn compile test xray:import-results
 
-    - name: Publish to GitHub Pages
+  publish-pages:
+    runs-on: ubuntu-latest
+    needs: build
+    continue-on-error: true
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+
+    - name: Publicar informe en GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/site/serenity
+        publish_dir: ./target/site/serenity # Ajusta la ruta según la estructura de tu proyecto
+        enable_jekyll: false # Si no usas Jekyll en tu informe, establece esto en false
