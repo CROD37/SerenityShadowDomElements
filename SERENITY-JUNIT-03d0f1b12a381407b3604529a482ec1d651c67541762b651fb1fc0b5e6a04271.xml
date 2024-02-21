@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Cargar archivos" skipped="0" tests="1" time="14.11" timestamp="2023-08-30 11:58:29"><testcase name="Cargar archivos"><error message="The following error occurred: WebDriver:GetShadowRoot&#10;Build info: version: '4.8.0', revision: '267030adea'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [6f53cd99-9f99-49b4-a524-5ecde52ce954, getElementShadowRoot {id=67fac51b-650b-4278-9a84-9569e773f350}]&#10;Capabilities {acceptInsecureCerts: false, browserName: firefox, browserVersion: 89.0.2, moz:accessibilityChecks: false, moz:buildID: 20210622155641, moz:debuggerAddress: localhost:38645, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:processID: 15276, moz:profile: C:\Users\Carlos\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platformName: WINDOWS, platformVersion: 10.0, se:cdp: ws://localhost:38645/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Element: [[FirefoxDriver: firefox on WINDOWS (6f53cd99-9f99-49b4-a524-5ecde52ce954)] -&gt; css selector: #open-shadow]&#10;Session ID: 6f53cd99-9f99-49b4-a524-5ecde52ce954" type="org.openqa.selenium.WebDriverException">The following error occurred: WebDriver:GetShadowRoot
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [6f53cd99-9f99-49b4-a524-5ecde52ce954, getElementShadowRoot {id=67fac51b-650b-4278-9a84-9569e773f350}]
+Capabilities {acceptInsecureCerts: false, browserName: firefox, browserVersion: 89.0.2, moz:accessibilityChecks: false, moz:buildID: 20210622155641, moz:debuggerAddress: localhost:38645, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:processID: 15276, moz:profile: C:\Users\Carlos\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platformName: WINDOWS, platformVersion: 10.0, se:cdp: ws://localhost:38645/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Element: [[FirefoxDriver: firefox on WINDOWS (6f53cd99-9f99-49b4-a524-5ecde52ce954)] -&gt; css selector: #open-shadow]
+Session ID: 6f53cd99-9f99-49b4-a524-5ecde52ce954</error><system-err>The following error occurred: WebDriver:GetShadowRoot
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [6f53cd99-9f99-49b4-a524-5ecde52ce954, getElementShadowRoot {id=67fac51b-650b-4278-9a84-9569e773f350}]
+Capabilities {acceptInsecureCerts: false, browserName: firefox, browserVersion: 89.0.2, moz:accessibilityChecks: false, moz:buildID: 20210622155641, moz:debuggerAddress: localhost:38645, moz:geckodriverVersion: 0.33.0, moz:headless: false, moz:processID: 15276, moz:profile: C:\Users\Carlos\AppData\Loc..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platformName: WINDOWS, platformVersion: 10.0, se:cdp: ws://localhost:38645/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Element: [[FirefoxDriver: firefox on WINDOWS (6f53cd99-9f99-49b4-a524-5ecde52ce954)] -&gt; css selector: #open-shadow]
+Session ID: 6f53cd99-9f99-49b4-a524-5ecde52ce954&#13;
+pageObjects.pageObjects.loginPage.configuracion(loginPage.java:53)&#13;
+steps.steps.UploadFilesStep.cargarArchivo(UploadFilesStep.java:14)&#13;
+stepdefinitions.stepdefinitions.TheInternetstepdefinitions.cargueSuArchivo(TheInternetstepdefinitions.java:23)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)&#13;
+io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:84)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:259)&#13;
+io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:59)&#13;
+</system-err></testcase></testsuite>

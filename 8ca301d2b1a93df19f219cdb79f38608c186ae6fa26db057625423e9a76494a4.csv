@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Ingresar al portal de Orange HRM 2","Ingresar al portal con un usuario valido","FAILURE","2023-03-11T22:14:44.6837627-05:00[America/Bogota]","0.0","0.05"
+"Ingresar al portal de Orange HRM 2","Ingresar al portal con un usuario valido2","FAILURE","2023-03-11T22:14:44.739366-05:00[America/Bogota]","0.0","0.05"
